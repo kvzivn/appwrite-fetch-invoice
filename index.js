@@ -1,9 +1,8 @@
 export default async ({ req, res, log, error }) => {
   log(req)
   try {
-    const { invoiceId } = req.body
-    log("Request body:", req.body)
-    log("invoiceId:", invoiceId)
+    const invoiceId = req.body
+    log(req.body)
     const response = await fetch(
       `https://api.eukapay.com/invoices/${invoiceId}`,
       {
