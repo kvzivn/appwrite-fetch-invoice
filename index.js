@@ -1,4 +1,4 @@
-export default async ({ req, res, error }) => {
+export default async ({ req, res, log, error }) => {
   try {
     const { invoiceId } = req.body
     const response = await fetch(
@@ -12,6 +12,7 @@ export default async ({ req, res, error }) => {
     )
 
     const data = await response.json()
+    log("Data fetched from EUKAPAY API:", data)
     return res.json(data)
   } catch (err) {
     error("Error fetching data from EUKAPAY API:", err.message)
