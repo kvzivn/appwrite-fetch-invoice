@@ -1,5 +1,5 @@
 export default async ({ req, res, log, error }) => {
-  log("req:", req)
+  log(req)
   try {
     const { invoiceId } = req.body
     log("Request body:", req.body)
